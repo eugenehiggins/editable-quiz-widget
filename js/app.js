@@ -149,7 +149,7 @@ quizApp.directive('quizQuestion', ['$compile','QuestionService','$rootScope', '$
 	}
 }]);
 
-quizApp.directive('checkAnswer', function ($compile, QuestionService, AnswerService){
+quizApp.directive('checkAnswer', ['$compile', 'QuestionService', 'AnswerService', function ($compile, QuestionService, AnswerService){
 
 	var qIndex = '';
 
@@ -241,7 +241,7 @@ quizApp.directive('checkAnswer', function ($compile, QuestionService, AnswerServ
 	}
 
 
-});
+}]);
 
 quizApp.directive('nextQuestion', function ($compile, QuestionService, AnswerService){
 
