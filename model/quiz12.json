@@ -1,0 +1,94 @@
+{
+"questions": [
+    {
+        "type": "MC",
+        "text": "Participation in World War I by the New Mexican National Guard",
+        "answers": [
+            {"text": "demonstrated their loyalty to the United States.","correct":"true"},
+            {"text": "was met with acceptance and gratitude by their fellow military soldiers."},
+            {"text": "was welcomed by the U.S. military because the US needed spanish speaking people."},
+            {"text": "was not accepted by the citizens of New Mexico."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "General John J. Pershing purpose for coming to New Mexico",
+        "answers": [
+            {"text": "to train army soldiers in preparation for World War I."},
+            {"text": "to chase Pancho Villa back to Mexico."},
+            {"text": "to capture Pancho Villa and the Villistas.","correct":"true"},
+            {"text": "to free Maud Wright from Poncho Villa's capture."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "Why did President Zachary Taylor want to bring New Mexico and California into the United States as Free states as quickly as possible?",
+        "answers": [
+            {"text": "He didn't want to lose the territory back to Mexico."},
+            {"text": "He wanted to ensure that the southern politicians would vote to make New Mexico a state before California."},
+            {"text": "He wanted to avoid sectional conflicts in Congress that would further divide the Northern and Southern politicians.","correct":"true"},
+            {"text": "He was able to send Major George McCall to the western territory before it became part of the United States."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "From 1850 to 1910 what was a common theme for why New Mexico struggled to become a state?",
+        "answers": [
+            {"text": "The shape of the territory that would become the state lines"},
+            {"text": "Spanish vs English language","correct":"true"},
+            {"text": "The short appointment terms of congressional delegates"},
+            {"text": "New Mexico citizens didn't want any more people to migrate to the territory"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "The term 'jointure' referred to:",
+        "answers": [
+            {"text": "Joining California to the Greater Arizona territory"},
+            {"text": "Joining forces to derail a filibuster"},
+            {"text": "Joining New Mexico to the Arizona territory","correct":"true"},
+            {"text": "Joining republicans and democrats "}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "Why did Pancho Villa raided Columbus in 1916?",
+        "answers": [
+            {"text": "To provoke the US military expedition into Mexico","correct":"true"},
+            {"text": "To gain needed supplies for the people in Mexico"},
+            {"text": "He believed that General Pershing and his men were in the city"},
+            {"text": "He needed to gain the acceptance of his followers"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "The celebration of a new state (New Mexico) was not much of a celebration because",
+        "answers": [
+            {"text": "there wasn't enough time to book the Mariachi band."},
+            {"text": "the state was still in poverty and illiteracy, with corrupt government and exploitation of the natural resources.","correct":"true"},
+            {"text": "the Governor and other delegates were not able to attend the official signing of the document by Taft."},
+            {"text": "there were no state funds to finance a celebration."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "In 1913 and 1914, why did Pancho Villa cross the road (Mexican border)",
+        "answers": [
+            {"text": "to restore order along the southern New Mexican border."},
+            {"text": "to gain President Woodrow Wilson's trust and keep 'American-style' democracy in Mexico."},
+            {"text": "to be the revolutionary leader and then the Governor of the state of Chihuahua."},
+            {"text": "All choices are correct.","correct":"true"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "Nina Otero-Warren was recognized for her contributions to New Mexicans",
+        "answers": [
+            {"text": "for being the leader of the Congressional Union."},
+            {"text": "for influencing the ratification of the Nineteenth Amendment in New Mexico.","correct":"true"},
+            {"text": "and arranged for a congressional special session to ratify voting rights for women."},
+            {"text": "as a field agent assigned to rural New Mexico during World War I."}
+        ]
+    }
+]
+}

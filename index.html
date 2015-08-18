@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)file:///Users/ehigginsiii/Desktop/inkling-widgets/new_multiple_choice/index.html -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="UTF-8">
+    <title>Multiple Choice Assessment Widget</title>
+    <link rel="stylesheet" href="css/view.css">
+    <!-- Multiple Choice Assessment Widget JS. -->
+    <!-- <script src="js/view.js"></script> -->
+    <!-- Load project font CSS -->
+    <!-- <link rel="stylesheet" href="css/fonts/fonts.css"> -->
+</head>
+<body ng-app="quizApp">
+    <div ng-controller="mainController" class="widget_container">
+        <!-- <quiz-question ng-repeat="(key, value) in questions" question="value" key="key"></quiz-question> -->
+        <quiz-question question="question" ng-cloak>
+            {{question}}
+        </quiz-question>
+    
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
+
+    <script type="text/javascript">
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
+            );
+        }
+
+        function setCorrectHeight ()
+        {
+            var height = getDocHeight();
+            window.parent.postMessage({
+                "type": "view",
+                "method": "set",
+                "payload": {
+                 "height": height
+                }
+            }, "*");
+        }
+        
+        $(document).ready(function(){
+            setCorrectHeight();
+        });
+        
+        
+    </script>
+
+</body>
+</html>

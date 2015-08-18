@@ -1,0 +1,104 @@
+{
+"questions": [
+    {
+        "type": "MC",
+        "text": "The Neolithic Revolution marked the impact on the population shifted from nomadic to sedentary due to",
+        "answers": [
+            {"text": "a transition to plant and animal domestication.","correct":"true"},
+            {"text": "the increase of more weapons (bows and arrows)."},
+            {"text": "the inability to build lasting shelters."},
+            {"text": "isolation from other tribes and outside intrusion."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "Researchers separated the Ancestral Puebloans into two distinct eras called",
+        "answers": [
+            {"text": "Mogollon and Hohokam."},
+            {"text": "Mesoamerica and Aztec."},
+            {"text": "Anasazi and Navajo."},
+            {"text": "Basketmakers and Pueblo.","correct":"true"}
+         ]
+    },
+    {
+        "type": "MC",
+        "text": "A common reason for the abandonment of the Ancestral Puebloan and Mogollon sites was due to",
+        "answers": [
+            {"text": "religious differences among the people."},
+            {"text": "the people could no longer trade their pottery outside of their pueblo."},
+            {"text": "climate change and drought throughout the region.","correct":"true"},
+            {"text": "no plausible reasons."}
+         ]
+    },
+    {
+        "type": "MC",
+        "text": "The concept of 'Moiety' indicates",
+        "answers": [
+            {"text": "was not recognized in the Pueblo cultures"},
+            {"text": "two fairly equal parts that combine to make a whole","correct":"true"},
+            {"text": "two parts in opposition of each other"},
+            {"text": "two unequal parts that separate the whole"}
+         ]
+    },
+    {
+        "type": "MC",
+        "text": "Which group, due to lifestyle and proximity, was most affected by the Spanish invasion?",
+        "answers": [
+            {"text": "The Navajo people"},
+            {"text": "The Apache people"},
+            {"text": "The Comanche people"},
+            {"text": "The Pueblo people","correct":"true"}
+         ]
+    },
+    {
+        "type": "MC",
+        "text": "In order to acknowledge the humanity of New Mexico's First Peoples, researchers",
+        "answers": [
+            {"text": "must incorporate the traditional histories of native peoples into their study of artifacts.","correct":"true"},
+            {"text": "rely on academic knowledge alone to tell indigenous peoples' histories."},
+            {"text": "rely solely on native peoples' oral histories."},
+            {"text": "must ignore accounts written by Spaniards and other European colonizers."}
+         ]
+    },
+    {
+        "type": "MC",
+        "text": "Most researchers no longer use the term Anasazi, but now prefer Ancestral Puebloan. Why has the term Anasazi fallen out of usage?",
+        "answers": [
+            {"text": "It is hard to pronounce."},
+            {"text": "It has a negative connotation.","correct":"true"},
+            {"text": "It is too generic."},
+            {"text": "It is not regionally accurate."}
+         ]
+    },
+    {
+        "type": "MC",
+        "text": "The first Athapaskan migrants arrival",
+        "answers": [
+            {"text": "shaped the course of New Mexico's history prior to the arrival of the Spanish"},
+            {"text": "became the ancestors of the Navajo, Mescalero Apache and the Jicarilla Apache people"},
+            {"text": "became marauders that forced Ancestral Puebloans from their great sites"},
+            {"text": "All choices are correct","correct":"true"}
+         ]
+    },
+    {
+        "type": "MC",
+        "text": "One of the most significant differences between the Pueblos is their",
+        "answers": [
+            {"text": "clothes."},
+            {"text": "beliefs."},
+            {"text": "food source."},
+            {"text": "spoken language.","correct":"true"}
+         ]
+    },
+    {
+        "type": "MC",
+        "text": "Around 1,500 BCE, who were the first peoples in the New Mexico region to domesticate corn, beans, and squash?",
+        "answers": [
+            {"text": "Mogollon","correct":"true"},
+            {"text": "Hohokam"},
+            {"text": "Ancestral Puebloan"},
+            {"text": "Navajo"}
+         ]
+    }
+]
+}

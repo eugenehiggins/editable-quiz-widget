@@ -1,0 +1,102 @@
+{
+"questions": [
+    {
+        "type": "MC",
+        "text": "In reaction to the Great Northern Rebellion, Spanish officials",
+        "answers": [
+            {"text": "ordered the abandonment of all settlements between El Paso del Norte and Guadiana."},
+            {"text": "initiated new, peaceful relations with indigenous peoples."},
+            {"text": "used violence and brutality to quash rumored rebellions.","correct":"true"},
+            {"text": "left Franciscan missionaries across the north to their own devices."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "According to Joe Sando, Pueblo responses to Spanish questions about the Revolt were a 'legendary joke' because",
+        "answers": [
+            {"text": "they used Spaniards’ lack of knowledge about Pueblo deities against them.","correct":"true"},
+            {"text": "they consistently blamed Navajos for instigating the uprising."},
+            {"text": "they simply laughed at Spanish inquiries about their motives."},
+            {"text": "they refused to converse with any Spaniards who could not speak Pueblo languages."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "Despite Oterm&iacute;n’s failure to reconquer New Mexico, his expedition learned",
+        "answers": [
+            {"text": "that Pueblo peoples had become even more strongly united following the Revolt."},
+            {"text": "Apache peoples made peace with Pueblos along the Rio Grande."},
+            {"text": "Pueblos had learned to manufacture European-style goods."},
+            {"text": "drought and famine persisted and Pueblo peoples were no longer united across linguistic lines.","correct":"true"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "Following the Pueblo Revolt, the Spanish Crown once again had to decide whether or not to abandon the New Mexico colony. The reconquest received royal support because",
+        "answers": [
+            {"text": "the king hoped to use New Mexico as a springboard to further exploration and settlement in the Great Plains."},
+            {"text": "the king considered New Mexico to be a vital buffer zone against French expansion.","correct":"true"},
+            {"text": "the king believed that the colony must be restored in order to bring Catholicism back to Pueblo peoples."},
+            {"text": "the king believed that a mountain of pure silver existed somewhere within the New Mexico colony."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "Who was Bartolom&eacute de Ojeda?",
+        "answers": [
+            {"text": "A Zia man who narrowly survived wounds inflicted by Spanish soldiers, and who later became an informant to Vargas’ reconquest mission.","correct":"true"},
+            {"text": "A Franciscan who survived the Pueblo Revolt and returned to New Mexico with Vargas."},
+            {"text": "A man from Isleta Pueblo who refused to join his people when they resettled near El Paso del Norte."},
+            {"text": "An Apache warrior who called on Pueblos to once again unite against Vargas’ reconquest mission in the early 1690s."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "The party that Vargas led to New Mexico in the fall of 1692 was prepared to resettle the colony at that time.",
+        "answers": [
+            {"text": "True"},
+            {"text": "False","correct":"true"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "Vargas’ dream of enacting a 'bloodless reconquest' did not come to fruition because",
+        "answers": [
+            {"text": "Navajo people incited Pueblos to violence against the Spanish in the 1690s."},
+            {"text": "many Pueblos led violent resistance to Vargas’ leadership through 1696.","correct":"true"},
+            {"text": "Hopi people continued to hold out against the Spanish, despite the desire of all other Pueblos to rejoin the Spanish Empire."},
+            {"text": "no Franciscans were willing to accompany the reconquest mission."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "Spanish-colonial society in New Mexico was defined by a caste system based on individuals’",
+        "answers": [
+            {"text": "strict adherence to Roman Catholicism."},
+            {"text": "willingness to explore new territories in the name of the crown."},
+            {"text": "perceived level of blood purity or ethnic intermixture.","correct":"true"},
+            {"text": "place of residence."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "Based on a 1790 census that reported 16,000 total inhabitants in New Mexico",
+        "answers": [
+            {"text": "only two claimed to have been born in Spain."},
+            {"text": "three-fourths claimed to have been born in Spain.","correct":"true"},
+            {"text": "only three admitted to mixed ethnic heritage."},
+            {"text": "half had been born outside of New Mexico."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "In colonial New Mexico, gen&iacute;zaros were",
+        "answers": [
+            {"text": "African slaves."},
+            {"text": "Catholic altar boys."},
+            {"text": "Pueblo soldiers."},
+            {"text": "detribalized indigenous peoples.","correct":"true"}
+        ]
+    }
+]
+}

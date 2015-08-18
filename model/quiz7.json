@@ -1,0 +1,54 @@
+{
+"questions": [
+    {
+        "type": "MC",
+        "text": "What forbade migration west of the Appalachian mountains or into Canada?",
+        "answers": [
+            {"text": "Adams-On&iacute;s Treaty"},
+            {"text": "Treaty of Guadalupe Hidalgo"},
+            {"text": "1783 Treaty of Paris"},
+            {"text": "Proclamation of 1763","correct":"true"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "What was sold to the United States for $15 million?",
+        "answers": [
+            {"text": "The Statue of Liberty"},
+            {"text": "The Southwest"},
+            {"text": "Lousisana Purchase","correct":"true"},
+            {"text": "Gadsden Purchase"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "What was the name of the uprising between the Native Americans and the settler of Mexico?",
+        "answers": [
+            {"text": "The Chimay&oacute; Rebellion","correct":"true"},
+            {"text": "The War of a Thousand Deserts"},
+            {"text": "Pueblo Revolt"},
+            {"text": "The Civil War"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "The War of a Thousand Deserts was",
+        "answers": [
+            {"text": "a war between the Apaches and Comanches."},
+            {"text": "a series of wars between Mexican settlers and the Native Americans."},
+            {"text": "reinvigorated raids on the Mexican settlers by the Comanche and Apache.","correct":"true"},
+            {"text": "a painting by Brian DeLay depicting Native Americans on the Santa Fe Trail."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "The Chimayo Rebellion",
+        "answers": [
+            {"text": "was an uprising between the Native Americans and the settlers of Mexico."},
+            {"text": "was a conflict between the rico officials and the poor nuevomexicanos.","correct":"true"},
+            {"text": "was to take Albino Perez out of office."},
+            {"text": "provided Manuel Armijo a reason to surrender Santa Fe to the US Army."}
+        ]
+    }
+]
+}
