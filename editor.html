@@ -4,37 +4,49 @@
     <meta charset="UTF-8">
     <title>Quiz Editor</title>
     <!-- Multiple Choice Assessment Widget CSS. -->
-    <link rel="stylesheet" href="css/edit.css" />
+    <script src="js/jquery.js"></script>
+    <!-- <script src="js/jquery-ui.js"></script> -->
+    <script src="js/angular.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.13.3.js"></script>
+    <script src="js/edit-app.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/edit-quiz.css">
+    <!-- <link rel="stylesheet" href="css/edit.css" /> -->
 </head>
 <body class="editor panel--active" ng-controller="editController">
-    <div class="panel">
-        <ul class="panel-menu">
-            <!-- <li><a class="panel-tab" href="#tabs-1">Question</a></li> -->
-            <li><a class="panel-tab" href="#tabs-1">Settings</a>
-            </li>
-            <span class="stretch"></span>
-            <li class="menu-underline"></li>
-        </ul>
-        <div class="panel-content">
-            <div id="tabs-1">
-                <label class="checkbox">
-                    <input type="checkbox">
-                    <span class="checkbox-label">Shuffle Choices</span>
-                </label>
-                <span id="settingsHelper">
-                    Randomly shuffle choices each time the reader takes this assessment.
-                </span>
+    <div class="container">
+        <div class="col-md-4 settings-col panel">
+            <ul class="list-unstyled">
+                <!-- <li><a class="panel-tab" href="#tabs-1">Question</a></li> -->
+                <li> <h4 class="column">Settings</h4></li>
+                <span class="stretch"></span>
+                <li class="menu-underline"></li>
+            </ul>
+            <div class="panel-content">
+                <div id="tabs-1">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox-label">Shuffle Choices</span>
+                    </label>
+                    <span id="settingsHelper">
+                        Randomly shuffle choices each time the reader takes this assessment.
+                    </span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="workspace">
-        <div class="content">
-            <div my-accordion id="accordion" ng-repeat="q in questions" question="q"> </div>
-            <!-- <my-accordion questions="questions"></my-accordion> -->
-    </div>
-    </div>
-    <div class="overlay-mask"></div>
+        <div class="col-md-8 questions-col">
+            <div class="content">
+                <accordion>
+                    <accordion-group ng-repeat="q in questions" heading=" Question {{q.id}}">
+                        <my-accordion question="q" questionid="{{q.id}}" class="xx"></my-accordion>
+                    </accordion-group>
+                </accordion>
+                <div id="addButton">Add Choice</div>
+            </div>
+        </div>
+        <div class="overlay-mask"></div>
 
         <div class="dialog-box confirmation">
             <div class="dialogText">
@@ -44,55 +56,54 @@
                 <div class="button-div confirmDelete clickable"><div class="button-text">Okay</div></div><br>
                 <!-- <span class="cancelDelete clickable">Cancel</span> -->
             </div>
-           <!--  <div class="show-again">
-                <input type="checkbox" id="showDelConf" class="custom-checkbox">
-                <div class="fake-checkbox"></div>
-                Don't show this message again.
-            </div> -->
+                   <!--  <div class="show-again">
+                        <input type="checkbox" id="showDelConf" class="custom-checkbox">
+                        <div class="fake-checkbox"></div>
+                        Don't show this message again.
+                    </div> -->
         </div>
+    </div>
     <script>
-    var global = {};
+        var global = {};
 
     </script>
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/angular.js"></script>
-    <script src="js/edit-app.js"></script>
 
-    <script>
-        $(function() {
-            $( "#accordion" ).accordion();
-        });
+
+        // <script>
+    //     $(function() {
+    //         $( "#accordion" ).accordion();
+    //     });
+    //  
     </script>
 
-  <script type="text/javascript">
-    function getDocHeight() {
-        var D = document;
-        return Math.max(
-            D.body.scrollHeight, D.documentElement.scrollHeight,
-            D.body.offsetHeight, D.documentElement.offsetHeight,
-            D.body.clientHeight, D.documentElement.clientHeight
-            );
-    }
+    <script type="text/javascript">
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
+                );
+        }
 
-    function setCorrectHeight ()
-    {
-        var height = getDocHeight();
-        window.parent.postMessage({
-            "type": "view",
-            "method": "set",
-            "payload": {
-               "height": height
-           }
-       }, "*");
-    }
+        function setCorrectHeight ()
+        {
+            var height = getDocHeight();
+            window.parent.postMessage({
+                "type": "view",
+                "method": "set",
+                "payload": {
+                 "height": height
+             }
+         }, "*");
+        }
 
-    $(document).ready(function(){
-        setCorrectHeight();
-    });
+        // $(document).ready(function(){
+        //     setCorrectHeight();
+        // });
 
 
-</script>
+    </script>
 
 </body>
 

@@ -5,10 +5,10 @@
         "type": "MC",
         "text": "In retaliation for the 1599 Acoma Revolt, Governor Juan de Oñate ordered",
         "answers": [
-            {"text": "the complete destruction of Acoma Pueblo, including its buildings and people.","optionalText": "Acoma was not destroyed."},
-            {"text": "the imprisonment of a few key leaders of the revolt.", "optionalText": "It was much was than that."},
-            {"text": "the mutilation of all Acoma men over the age of twenty-five.","correct":"true","optionalText":"Oñate was a bad dude"},
-            {"text": "that no actions be taken for fear of further infuriating Pueblo peoples."}
+            {"id": 0, "text": "the complete destruction of Acoma Pueblo, including its buildings and people.","optionalText": "Acoma was not destroyed."},
+            {"id": 1, "text": "the imprisonment of a few key leaders of the revolt.", "optionalText": "It was much was than that."},
+            {"id": 2, "text": "the mutilation of all Acoma men over the age of twenty-five.","correct":"true","optionalText":"Oñate was a bad dude"},
+            {"id": 3, "text": "that no actions be taken for fear of further infuriating Pueblo peoples."}
         ],
         "promptTextIncorrect": "Not Quite",
         "promptTextCorrect": "Correct!"

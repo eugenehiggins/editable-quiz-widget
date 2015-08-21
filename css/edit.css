@@ -1016,3 +1016,5 @@ textarea.optionalText {
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 10px; }
+
+  .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }

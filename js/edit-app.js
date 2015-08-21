@@ -1,4 +1,4 @@
-editApp = angular.module('editApp',[]);
+editApp = angular.module('editApp',['ui.bootstrap']);
 
 // SERVICES
 editApp.service('DataService', ['$http', function($http){
@@ -7,6 +7,10 @@ editApp.service('DataService', ['$http', function($http){
 	
 	self.getData = function() {
 		return $http.get("model/quiz1.json");
+
+	}
+
+	self.postData = function(questionId,field,value){
 
 	}
 }])
@@ -19,22 +23,47 @@ editApp.directive('myAccordion', ['$compile', function($compile){
 		// priority: 1,
 		// terminal: true,
 		scope: {
-			question : '='
+			question : '=',
+			questionId : '='
 		}, // {} = isolate, true = child, false/undefined = no change
 		// controller: function($scope, $element, $attrs, $transclude) {},
 		// require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
 		// restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
 		// template: '',
-		templateUrl: 'parts/accordion.html',
-		replace: true,
+		templateUrl: 'parts/questions-view.html',
+		// replace: true,
 		// transclude: true,
 		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
-		link: function($scope, iElm, iAttrs, controller) {
-			$scope.convertToASCII = function(i) {
-				console.log (i);
+		link: function(scope, element, iAttrs, controller) {
+
+			//console.log(scope.questionId)
+			scope.convertToASCII = function(i) {
+				// console.log (i);
 				return String.fromCharCode(i + 65);
 				//return "howdy";
 			}
+			
+			element.on('click', { foo:"bar" }, function(event){
+
+				var target = $(event.target);
+				var questionId = $(element).attr('questionid');
+				var answerId = '';
+
+				//console.log(questionId);
+
+				if (target.hasClass('questionText')) {
+					questionId = target.parent().attr('id').split('-')[1];
+					console.log(questionId);
+				} else if (target.hasClass('answerText')) {
+					answerId = target.parent().attr('id').split('-')[1];
+					console.log(target.parent().attr('id').split('-')[1]);
+				};
+				
+			});
+
+			$('accordion').on('click', function(event){
+				//console.log($(event.target).parent());
+			});
 		}
 	};
 }]);
@@ -47,7 +76,7 @@ editApp.controller('editController', ['$scope','DataService', function($scope,Da
 	promise.then(
 		function(payload) {
 			$scope.questions = payload.data.questions;
-			console.log(payload.data.questions);
+			// console.log(payload.data.questions);
 		});
 
 }])
