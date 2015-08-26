@@ -1,9 +1,0 @@
-{
-    "viewAssets": {
-        "included": [ 
-            "index.html",
-            "css/view.css",
-            "js/view.js"
-        ]
-    }
-}
