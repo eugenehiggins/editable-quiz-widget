@@ -1,0 +1,47 @@
+<div  ng-repeat="q in questions" question="q">
+    <h3>Question {{ q.id + 1 }}</h3>
+    <div>
+        <div class="group" id="questionGroup">
+            <menu class="button-menu vert-right">
+                <div class="button btn-add-image imageEditor" name="Add Image">
+                    <input id="imagePicker" type="file">
+                </div>
+
+            </menu>
+            <div class="btnEdit" id="question">
+                <textarea type="text" class="answerInput" placeholder="Add Question" font-weight: "800">{{ question.text }}</textarea>
+                <textarea class="optionalText" placeholder="Add Hint (optional)" rows="1"></textarea>
+                <div class="promptText"></div>
+            </div>
+        </div>
+        <div class="group" id="imageGroup" style="display: none">
+            <menu class="button-menu vert-right" id="imageButtons">
+                <div class="button btn-replace" name="Swap Image">
+                    <input id="swapButton" type="file">
+                </div>
+                <div class="button btn-delete" name="Delete Image">
+                </div>
+
+            </menu>
+            <div class="image"><img id="imageContainer" style="display:none"></div>
+        </div>
+        <div class="group">
+            <ul class="answer_set sortable ui-sortable" ng-repeat="a in question.answers">
+                <div class="answerBlock">
+                    <li class="btnEdit answer1">
+                    	<span class="enumeration">{{ convertToASCII($index) }}</span>
+                        <label class="switch">
+                            <input type="checkbox" class="check"><span class="switch-label"></span>
+                        </label>
+                        <textarea class="answerInput" placeholder="Add Answer" rows="1" style="height: 58px;">{{ a.text }}</textarea>
+                        <div ng-class="a.correct ? 'correct':'incorrect'" class="promptText ">promptText</div>
+                        <textarea class="optionalText" placeholder="Add Feedback (Optional)" rows="1" style="height: 72px;">{{ a.optionalText }}</textarea>
+                    </li>
+                    <button class="button btn-trash" name="Delete Choice" style="opacity: 0;"></button>
+                </div>
+            </ul>
+            <button class="button btn-trash" name="Delete Choice"></button>
+        </div>
+        
+    </div>
+</div>

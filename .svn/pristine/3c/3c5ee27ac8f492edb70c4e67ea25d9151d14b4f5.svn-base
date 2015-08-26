@@ -1,0 +1,131 @@
+editApp = angular.module('editApp',['ui.bootstrap']);
+
+// SERVICES
+editApp.service('DataService', ['$http', function($http){
+
+	var self = this;
+	self.questionData = {};
+	
+	self.getData = function() {
+		var configPath = self.getParameterByName("configFile");
+		if (configPath) {
+			console.log("howdy "+configPath);
+			return $http.get(configPath);
+		} else {
+			return $http.get('model/quiz1.json');
+		}
+
+	}
+
+	self.setQuestionData = function(questions) {
+		self.questionData = questions;
+	}
+
+	self.setQuestionText = function(qId, text) {
+		
+
+		for  ( var q of self.questionData) {
+			if (q.id == qId) {
+				self.questionData[q.id].text = text;
+				console.log(self.questionData);
+			}
+
+			
+		}
+	}
+
+	self.getParameterByName = function (name) {
+    	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    	var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), 
+    		results = regex.exec(location.search);
+    	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+
+	self.postData = function(){
+		// var postObj = {};
+		// postObj['type'] = "configuration";
+		// postObj['method'] = "file";
+		// postObj['payload'] = self.questionData;
+		// window.parent.postMessage(postObj, "*");
+	}
+
+	
+
+}])
+
+// DIRECTIVES
+editApp.directive('myAccordion', ['$compile','DataService', function($compile,DataService){
+	// Runs during compile
+	return {
+		// name: '',
+		// priority: 1,
+		// terminal: true,
+		scope: {
+			question : '=',
+			questionId : '='
+		}, // {} = isolate, true = child, false/undefined = no change
+		// controller: function($scope, $element, $attrs, $transclude) {},
+		// require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
+		// restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
+		// template: '',
+		templateUrl: 'parts/questions-view.html',
+		// replace: true,
+		// transclude: true,
+		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
+		link: function(scope, element, iAttrs, controller) {
+
+			//console.log(scope.questionId)
+			scope.convertToASCII = function(i) {
+				// console.log (i);
+				return String.fromCharCode(i + 65);
+			}
+			
+			element.on('click', function(event){
+				var target = $(event.target);
+				var questionId = $(element).attr('questionid');
+				var answerId = '';
+
+				//console.log(questionId);
+
+				if (target.hasClass('questionText')) {
+
+					target.on('blur', function(evt) {
+						
+					});
+
+					//console.log(questionId);
+				} else if (target.hasClass('answerText')) {
+					answerId = target.parent().attr('id').split('-')[1];
+					//console.log(target.parent().attr('id').split('-')[1]);
+				};
+				
+			});
+
+			element.on('change', function(event){
+				var target = $(event.target);
+				var questionId = $(element).attr('questionid');
+				DataService.setQuestionText(questionId, target.val());
+				DataService.postData();
+						//target.unbind('blur');
+				
+			});
+
+			$('accordion').on('click', function(event){
+				//console.log($(event.target).parent());
+			});
+		}
+	};
+}]);
+
+// CONTROLLER
+editApp.controller('editController', ['$scope','DataService', function($scope,DataService){
+	
+	var promise = DataService.getData();
+
+	promise.then(
+		function(payload) {
+			console.log(payload);
+			DataService.setQuestionData($scope.questions = payload.data);
+		});
+
+}])

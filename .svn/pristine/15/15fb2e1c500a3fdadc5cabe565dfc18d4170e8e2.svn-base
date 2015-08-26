@@ -1,0 +1,52 @@
+{
+"questions": [
+    {
+        "type": "MC",
+        "text": "Cabeza de Vaca found kindness and openness of most of the people he encountered during his group's wanderings across North America?",
+        "answers": [
+            {"text": "True","correct":"true"},
+            {"text": "False"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "Who led the expedition that eventually conquered the Aztec Empire?",
+        "answers": [
+            {"text": "Cort&eacute;s","correct":"true"},
+            {"text": "Coronado"},
+            {"text": "Cabeza de Vaca"},
+            {"text": "Columbus"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "What is the name of the only town commissioned by Coronado during his entrada to Nuevo M&eacute;xico?",
+        "answers": [
+            {"text": "Coronado"},
+            {"text": "San Ger&oacute;nimo","correct":"true"},
+            {"text": "Los Corazones"},
+            {"text": "C&iacute;bola"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "What was the purpose of Cabeza de Vaca exploration from Florida to Mexico City in 1528",
+        "answers": [
+            {"text": "to locate the fabled fountain of youth.","correct":"true"},
+            {"text": "to discover native american people ."},
+            {"text": "to travel as a healer to help the native americans."},
+            {"text": "to convert the natives to catholicism."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "Why did the native peoples consistently feed  the Europeans' desire to locate mythical cities of wealth?",
+        "answers": [
+            {"text": "To keep them away from their homes and families.","correct":"true"},
+            {"text": "Expecting the European's would bring the treasures back to the natives"},
+            {"text": "Hoping the European's would invite them on the expedition."},
+            {"text": "It would bring the native people good luck."}
+        ]
+    }
+]
+}

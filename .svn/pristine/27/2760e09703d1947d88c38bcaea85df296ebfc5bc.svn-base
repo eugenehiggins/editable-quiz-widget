@@ -1,0 +1,112 @@
+{
+"questions": [
+    {
+        "type": "MC",
+        "text": "Who commanded an army of Texas Confederates who invaded New Mexico and moved up the Rio Grande? They defeated a Union force at Valverde, advanced through Albuquerque and Santa Fe, and then turned north toward Colorado's gold fields.",
+        "answers": [
+            {"text": "General Henry J. Sibley","correct":"true"},
+            {"text": "Major John M. Chivington"},
+            {"text": "Christopher 'Kit' Carson"},
+            {"text": "General James H. Carleton"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "Meeting with army officers at Fort Weld outside Denver, the Cheyenne chief, Black Kettle, agreed to lead his people back to their Sand Creek reservation in order to restore peace after Indian raids on ranches in the area. What happened on the way to Sand Creek?",
+        "answers": [
+            {"text": "Black Kettle's people are attacked there by a volunteer force led by John M. Chivington, the 'Fighting Parson' of Glorieta Pass."},
+            {"text": "The Cheyenne encampment is massacred at dawn and nearly two hundred men, women and children die."},
+            {"text": "Later Congressional and military investigations condemn Chivington for the slaughter."},
+            {"text": "All choices are correct.","correct":"true"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "The Santa Fe Ring was known as",
+        "answers": [
+            {"text": "the geography of the city."},
+            {"text": "anonymous kind acts for the citizens."},
+            {"text": "systematized organization of rascality.","correct":"true"},
+            {"text": "a powerful positive force in 19th century New Mexico."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "The 'House' in Lincoln County was known for its stronghold on the economy, control over the county's government and political systems. It iss also known for",
+        "answers": [
+            {"text": "the place where Billy the Kid was shot and killed."},
+            {"text": "John Tunstall's Store."},
+            {"text": "the modernization of Lincoln County."},
+            {"text": "the close ties to the Santa Fe Ring.","correct":"true"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "Men who served on both sides of the Civil War conflict came to the New Mexico territory to search for the opportunity to start over, and hopefully make a fortune by exploiting the lands resources and people. Certain men who profited the most did so by",
+        "answers": [
+            {"text": "manipulating the territorial politics."},
+            {"text": "being appointed to government offices by presidential appointments."},
+            {"text": "coercing New Mexicans, Pueblos and the territory indigenous people to be U.S. citizens"},
+            {"text": "All choices are correct.","correct":"true"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "What events instigated the Lincoln County War?",
+        "answers": [
+            {"text": "Two competing general stores in Lincoln County"},
+            {"text": "A feud between two men from Ireland (Murphy and Dolan) a Lawyer (McSween) and a store owner from England (Tunstall)"},
+            {"text": "Billy the Kid and the Regulators sought revenge"},
+            {"text": "All choices are correct.","correct":"true"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "The confederate leadership in southern New Mexico prohibited the enlistment of Mexican-heritage people except to fight against the",
+        "answers": [
+            {"text": "Navajo."},
+            {"text": "Apaches.","correct":"true"},
+            {"text": "Mescalero."},
+            {"text": "Pueblo"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "Confederate power in the New Mexico Territory was effectively broken after the Battle of Glorieta Pass in 1862.",
+        "answers": [
+            {"text": "True","correct":"true"},
+            {"text": "False"}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "James H. Carlton left his mark on New Mexico with his attitude toward the Native Americans. Carlton and the U.S. Military viewed the Natives as",
+        "answers": [
+            {"text": "The Indian Problem.","correct":"true"},
+            {"text": "Strong fighters and an opportunity to recruit them into the military."},
+            {"text": "Resourceful and relied on them for supplies and food."},
+            {"text": "Protestant Christians."}
+        ]
+    },
+    {
+        "type": "MC",
+        "text": "The U.S. Military provided which of the following for the 'Long Walk' by the Native Americans",
+        "answers": [
+            {"text": "paced daily walking so that everyone could keep up."},
+            {"text": "respect for their religious practices."},
+            {"text": "adequate food, water, and supplies for all of the people,"},
+            {"text": "absolutely horrible and inhumane conditions that no human should have to endure.","correct":"true"}
+        ]
+    },
+        {
+        "type": "MC",
+        "text": "Nuevomexicanos, Pueblos and Anglo New Mexicans were pleased with the idea of placing Navajos on reservation because",
+        "answers": [
+            {"text": "they could now own the Navajos land for free."},
+            {"text": "they would be able to divide the Navajos supplies among them"},
+            {"text": "their animosity and anger against the Navajos for their years of tyranny over them.","correct":"true"},
+            {"text": "the Navajos would all be in one place."}
+        ]
+    }
+]
+}
