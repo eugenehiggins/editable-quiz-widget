@@ -184,8 +184,10 @@ quizApp.directive('checkAnswer', ['$compile', 'QuestionService', 'AnswerService'
 					if (qs.getCurrentQuestionId() + 1 >= qs.getQuestions().length) {
 							$('#next_button').text('Finish');
 					}
-				
-					if($(".active")[0] && qs.getQuestion().answers[qIndex].correct === "true"){
+//$(".user_select").attr('correct')
+					// if the answer button is active (which means an answer has been selected) 
+					// and the selected answer is correct...
+					if($("#answer_button.active")[0] && $(".user_select").attr('correct') === "true"){
 						
 						// THE ANSWER IS CORRECT
 						$('#answer_button').hide();
@@ -311,7 +313,7 @@ quizApp.directive('answer', [ '$compile', 'AnswerService', function ($compile, A
 	return {
 		replace: true,
 		restrict: "E",
-		template: '<li class="answer answer-{{ key }}" id="answer-{{ key }}"><span class="enumeration">{{ answer.text }}</span></li>',
+		template: '<li class="answer answer-{{ key }}" id="answer-{{ key }}" correct="{{answer.correct}}"><span class="enumeration">{{ answer.text }}</span></li>',
 		link: linker,
 		scope: {
 			answer: "=",
