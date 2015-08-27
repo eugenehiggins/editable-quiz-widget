@@ -12,7 +12,7 @@
         "type": "MC",
         "text": "Who led the expedition that eventually conquered the Aztec Empire?",
         "answers": [
-            {"text": "Cort&eacute;s","correct":"true"},
+            {"text": "Cortés","correct":"true"},
             {"text": "Coronado"},
             {"text": "Cabeza de Vaca"},
             {"text": "Columbus"}
@@ -20,12 +20,12 @@
     },
     {
         "type": "MC",
-        "text": "What is the name of the only town commissioned by Coronado during his entrada to Nuevo M&eacute;xico?",
+        "text": "What is the name of the only town commissioned by Coronado during his entrada to Nuevo México?",
         "answers": [
             {"text": "Coronado"},
-            {"text": "San Ger&oacute;nimo","correct":"true"},
+            {"text": "San Gerónimo","correct":"true"},
             {"text": "Los Corazones"},
-            {"text": "C&iacute;bola"}
+            {"text": "Cíbola"}
         ]
     },
     {

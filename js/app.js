@@ -1,6 +1,6 @@
 
 
-var quizApp = angular.module('quizApp',[]);
+var quizApp = angular.module('quizApp',['ngSanitize']);
 
 //SERVICES
 
@@ -41,8 +41,23 @@ quizApp.service('QuestionService', ['$http','AnswerService', '$rootScope', funct
 	}
 
 	self.getData = function() {
-		return $http.get("model/quiz15.json");
+		//return $http.get("model/quiz15.json");
+		var configPath = self.getParameterByName("configFile");
+		if (configPath) {
 
+			return $http.get(configPath);
+		} else {
+
+			return $http.get('model/quiz1.json');
+		}
+
+	}
+
+	self.getParameterByName = function (name) {
+    	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    	var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), 
+    		results = regex.exec(location.search);
+    	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	}
 
 	self.getCurrentQuestionId = function (){
@@ -55,6 +70,7 @@ quizApp.service('QuestionService', ['$http','AnswerService', '$rootScope', funct
 
 	self.getQuestion = function() {
 		if(self.quizDone == false){
+		
 			self.q = self.questions[self.currentQuestionId];
 			return self.q;
 		} else {
@@ -335,7 +351,8 @@ quizApp.controller('mainController',['$scope','QuestionService','$http', '$sce',
 		QuestionService.getData().
 		//$http.get("model/questions.json").
 		then(function (result) {
-			QuestionService.questions = result.data.questions;
+
+			QuestionService.questions = result.data;
 			
 			//QuestionService.currentQuestionId = 0;
 			$scope.$broadcast("Data_Ready");

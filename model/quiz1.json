@@ -2,7 +2,7 @@
     {
         "id": 0,
         "type": "MC",
-        "text": "In retaliation for the 1599 Acoma Revolt, Governor Juan de Oñate ordered",
+        "text": "In retaliation for the 1599 Acoma Revolt, Governor Juan de Oñate ordered ",
         "answers": [
             {"id": 0, "text": "the complete destruction of Acoma Pueblo, including its buildings and people.","optionalText": "Acoma was not destroyed."},
             {"id": 1, "text": "the imprisonment of a few key leaders of the revolt.", "optionalText": "It was much was than that."},

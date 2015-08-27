@@ -12,7 +12,7 @@
     },
     {
         "type": "MC",
-        "text": "Juan de O&ntilde;ate was considered the last conquistador because",
+        "text": "Juan de Oñate was considered the last conquistador because",
         "answers": [
             {"text": "he ran out of money to fund the expedition."},
             {"text": "he became a governor in Spain."},
@@ -34,7 +34,7 @@
         "type": "MC",
         "text": "The main reason for the Battle of Acoma Pueblo was to",
         "answers": [
-            {"text": "given O&ntilde;ate's nephew Vicente de Zaldivar the chance to fight in battle."},
+            {"text": "given Oñate's nephew Vicente de Zaldivar the chance to fight in battle."},
             {"text": "save the women and children of the Pueblo from the Acoma men."},
             {"text": "take revenge for the death of Juan de Zaldivar."},
             {"text": "assert Spanish dominance and convert the natives to Catholicism and European culture.","correct":"true"}
@@ -52,7 +52,7 @@
     },
     {
         "type": "MC",
-        "text": "In 1609, Viceroy Lu&iacute;s de Velasco issued an order that",
+        "text": "In 1609, Viceroy Luís de Velasco issued an order that",
         "answers": [
             {"text": "required New Mexico settlers to search for nearby coasts."},
             {"text": "placed the New Mexico colony under royal control.","correct":"true"},

@@ -22,7 +22,7 @@
     },
     {
         "type": "MC",
-        "text": "Despite Oterm&iacute;n’s failure to reconquer New Mexico, his expedition learned",
+        "text": "Despite Otermín’s failure to reconquer New Mexico, his expedition learned",
         "answers": [
             {"text": "that Pueblo peoples had become even more strongly united following the Revolt."},
             {"text": "Apache peoples made peace with Pueblos along the Rio Grande."},
@@ -42,7 +42,7 @@
     },
     {
         "type": "MC",
-        "text": "Who was Bartolom&eacute de Ojeda?",
+        "text": "Who was Bartolomé de Ojeda?",
         "answers": [
             {"text": "A Zia man who narrowly survived wounds inflicted by Spanish soldiers, and who later became an informant to Vargas’ reconquest mission.","correct":"true"},
             {"text": "A Franciscan who survived the Pueblo Revolt and returned to New Mexico with Vargas."},
@@ -90,7 +90,7 @@
     },
     {
         "type": "MC",
-        "text": "In colonial New Mexico, gen&iacute;zaros were",
+        "text": "In colonial New Mexico, genízaros were",
         "answers": [
             {"text": "African slaves."},
             {"text": "Catholic altar boys."},

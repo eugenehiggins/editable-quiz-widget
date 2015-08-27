@@ -4,7 +4,7 @@
         "type": "MC",
         "text": "What forbade migration west of the Appalachian mountains or into Canada?",
         "answers": [
-            {"text": "Adams-On&iacute;s Treaty"},
+            {"text": "Adams-Onís Treaty"},
             {"text": "Treaty of Guadalupe Hidalgo"},
             {"text": "1783 Treaty of Paris"},
             {"text": "Proclamation of 1763","correct":"true"}
@@ -24,7 +24,7 @@
         "type": "MC",
         "text": "What was the name of the uprising between the Native Americans and the settler of Mexico?",
         "answers": [
-            {"text": "The Chimay&oacute; Rebellion","correct":"true"},
+            {"text": "The Chimayó Rebellion","correct":"true"},
             {"text": "The War of a Thousand Deserts"},
             {"text": "Pueblo Revolt"},
             {"text": "The Civil War"}

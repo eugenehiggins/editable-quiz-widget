@@ -36,13 +36,13 @@
         "answers": [
             {"text": "Lousiana Purchase"},
             {"text": "Reglamento de 1772","correct":"true"},
-            {"text": "Adams-On&iacute;s Treaty"},
+            {"text": "Adams-Onís Treaty"},
             {"text": "Treaty of San Ildefonso"}
         ]
     },
     {
         "type": "MC",
-        "text": "Who was Pekka H&auml;m&auml;l&auml;inen?",
+        "text": "Who was Pekka Hämäläinen?",
         "answers": [
             {"text": "a Laguna santero"},
             {"text": "New Mexico State Governor"},

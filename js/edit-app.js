@@ -1,4 +1,4 @@
-editApp = angular.module('editApp',['ui.bootstrap']);
+editApp = angular.module('editApp',['ui.bootstrap','ngSanitize']);
 
 // SERVICES
 editApp.service('DataService', ['$http', function($http){
@@ -16,6 +16,32 @@ editApp.service('DataService', ['$http', function($http){
 
 	}
 
+	self.getAnswers = function (qId) {
+
+		for  ( var q of self.questionData) {
+
+			if (q.id == qId) {
+				return q.answers;
+
+			}
+		}
+	}
+
+	self.addAnswer = function(qId) {
+		for ( var q of self.questionData) {
+
+			if (q.id == qId) {
+
+				var answers = q.answers;
+
+				answers[length + 1] = {"text":""}
+				self.questionData[qId].answers = answers;
+
+				console.log( JSON.parse(self.questionData[qId].answers) )
+			}
+		}
+	}
+
 	self.setQuestionData = function(questions) {
 		self.questionData = questions;
 	}
@@ -31,10 +57,14 @@ editApp.service('DataService', ['$http', function($http){
 	self.setAnswerText = function(qId, aId, text) {
 		for  ( var q of self.questionData) {
 			if (q.id == qId) {
+				var i = 0;
 				for (var a of q.answers){
-					if (a.id == aId){	
-						self.questionData[q.id].answers[aId].text = text;
+					if (i == aId){	
+						self.questionData[q.id].answers[i].text = text;
+
+						return;
 					}
+					i++;
 				}
 			}
 		}
@@ -44,12 +74,15 @@ editApp.service('DataService', ['$http', function($http){
 
 		for  ( var q of self.questionData) {
 			if (q.id == qId) {
+
+				var i = 0;
 				for(var a of q.answers) {
-					if (a.id == aId) {
-						self.questionData[q.id].answers[a.id].correct = "true";
+					if (i == aId) {
+						self.questionData[q.id].answers[i].correct = "true";
 					} else {
-						delete self.questionData[q.id].answers[a.id].correct;
+						delete self.questionData[q.id].answers[i].correct;
 					}
+					i++;
 				}
 			}
 		}
@@ -61,7 +94,7 @@ editApp.service('DataService', ['$http', function($http){
 				var i = 0;
 				for(var a of q.answers) {
 
-					if (a.id == aId) {
+					if (i == aId) {
 						
 						//delete self.questionData.id[q.id].answers.id[a.id];
 						//console.log(self.questionData[q.id].answers[i])
@@ -165,15 +198,26 @@ editApp.directive('myAccordion', ['$compile','DataService', function($compile,Da
 
 			element.on('click',function(event){
 				$target = $(event.target);
-				answerId = $target.siblings('li.btnEdit').attr('id').split('-')[1];
-				console.log('answerId: ' + answerId)
+
 				questionId = $target.parents('my-accordion').attr('questionid');
 
 				// answer trash button was click
 				if($target.hasClass('btn-trash')) {
-					$target.parents('ul.answer_set').hide('slow').remove();
+					answerId = $target.parents('li.btnEdit').attr('id').split('-')[1];
+					$target.parents('li.btnEdit').hide('slow').remove();
 					DataService.deleteAnswer(questionId,answerId);
+											console.log(DataService.getAnswers(questionId))
+
 					DataService.postData();	
+				} else if ($target.hasClass('addAnswerButton')) {
+					var answers = DataService.getAnswers(questionId);
+
+					var newIndex = answers.length;
+					//console.log(questionId);
+					var newAnswerHTML = angular.element("<li class=\"btnEdit ng-scope\" id=\"answer-" + newIndex + "\" ><span class=\"enumeration ng-binding\">"+scope.convertToASCII(newIndex)+"</span><label class=\"switch\"><input type=\"checkbox\" class=\"check\" ng-checked=\"\"><span class=\"switch-label\"></span></label><textarea class=\"answerInput answerText ng-binding\" placeholder=\"Add Answer\" rows=\"1\" style=\"height: 58px;\"></textarea><div ng-class=\"a.correct ? \'correct':\'incorrect\'\" class=\"promptText  incorrect\">promptText</div><textarea class=\"optionalText ng-binding\" placeholder=\"Add Feedback (Optional)\" rows=\"1\" style=\"height: 72px;\"></textarea></li>");
+					$target.before(newAnswerHTML);
+					DataService.addAnswer(questionId);
+					//scope.$apply();
 				}
 			});
 
