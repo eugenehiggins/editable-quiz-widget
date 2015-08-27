@@ -29,7 +29,6 @@ editApp.service('DataService', ['$http', function($http){
 	}
 
 	self.setAnswerText = function(qId, aId, text) {
-		console.log(self.questionData[qId].answers[aId].text);
 		for  ( var q of self.questionData) {
 			if (q.id == qId) {
 				for (var a of q.answers){
@@ -39,7 +38,6 @@ editApp.service('DataService', ['$http', function($http){
 				}
 			}
 		}
-		console.log(self.questionData[qId].answers[aId].text);
 	}
 
 	self.setCorrectAnswer = function (qId,aId) {
@@ -60,16 +58,22 @@ editApp.service('DataService', ['$http', function($http){
 	self.deleteAnswer = function (qId,aId){
 		for  ( var q of self.questionData) {
 			if (q.id == qId) {
+				var i = 0;
 				for(var a of q.answers) {
-					console.log(a)
-					console.log('a.id: '+a.id)
-					console.log('aId: '+ aId)
+
 					if (a.id == aId) {
-						delete self.questionData[q.id].answers[a.id];
+						
+						//delete self.questionData.id[q.id].answers.id[a.id];
+						//console.log(self.questionData[q.id].answers[i])
+						self.questionData[q.id].answers.splice(i,1);
+						return;
+						//q.answers.splice(i,1);
+
 					}
+
+					i++;
 				}
 
-				console.log (self.questionData[qId]);
 			}
 		}
 
@@ -115,7 +119,6 @@ editApp.directive('myAccordion', ['$compile','DataService', function($compile,Da
 		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
 		link: function(scope, element, iAttrs, controller) {
 
-			//console.log(scope.questionId)
 			scope.convertToASCII = function(i) {
 				return String.fromCharCode(i + 65);
 			}
@@ -129,7 +132,6 @@ editApp.directive('myAccordion', ['$compile','DataService', function($compile,Da
 
 				if (target.hasClass('check')) {
 
-					console.log('checkbox changed')
 					//find sibling checkboxes
 					var checkBoxes = $(element).find('checkbox');
 					
@@ -158,14 +160,13 @@ editApp.directive('myAccordion', ['$compile','DataService', function($compile,Da
 				
 				
 				DataService.postData();	
-				//console.log(DataService.questionData);
 
 			});
 
 			element.on('click',function(event){
 				$target = $(event.target);
-				console.log($target.siblings('li.btnEdit').attr('id'))
 				answerId = $target.siblings('li.btnEdit').attr('id').split('-')[1];
+				console.log('answerId: ' + answerId)
 				questionId = $target.parents('my-accordion').attr('questionid');
 
 				// answer trash button was click
