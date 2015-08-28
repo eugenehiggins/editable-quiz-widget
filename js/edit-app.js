@@ -1,4 +1,4 @@
-editApp = angular.module('editApp',['ui.bootstrap','ngSanitize']);
+editApp = angular.module('editApp',['ui.bootstrap','ngSanitize',]);
 
 // SERVICES
 editApp.service('DataService', ['$http', function($http){
@@ -11,9 +11,13 @@ editApp.service('DataService', ['$http', function($http){
 		if (configPath) {
 			return $http.get(configPath);
 		} else {
-			return $http.get('model/quiz1.json');
+			return $http.get('model/quiz10.json');
 		}
 
+	}
+
+	self.getQuestionData = function () {
+		return self.questioinData;
 	}
 
 	self.getAnswers = function (qId) {
@@ -36,7 +40,7 @@ editApp.service('DataService', ['$http', function($http){
 				var answers = q.answers;
 
 				//answers[length + 1] = {"text":""}
-				answers.push({"text":""})
+				answers.push({"text":"","optionalText":""})
 				self.questionData[qId].answers = answers;
 
 			}
@@ -83,7 +87,10 @@ editApp.service('DataService', ['$http', function($http){
 					if (i == aId) {
 						self.questionData[q.id].answers[i].correct = "true";
 					} else {
-						delete self.questionData[q.id].answers[i].correct;
+
+						if ( self.questionData[q.id].answers[i].correct !== null){
+							delete self.questionData[q.id].answers[i].correct;
+						}
 					}
 					i++;
 				}
@@ -99,13 +106,10 @@ editApp.service('DataService', ['$http', function($http){
 
 					if (i == aId) {
 						
-						//delete self.questionData.id[q.id].answers.id[a.id];
 						self.questionData[q.id].answers.splice(i,1);
 						return;
-						//q.answers.splice(i,1);
 
 					}
-
 					i++;
 				}
 
@@ -134,6 +138,23 @@ editApp.service('DataService', ['$http', function($http){
 }])
 
 // DIRECTIVES
+editApp.directive('jsonUpload',['DataService','$rootScope', function(DataService,$rootScope){
+	return {
+		templateUrl: 'parts/json-upload.html',
+		link: function(scope, element, attrs, controller) {
+			element.on('click', function(event){
+				$target = $(event.target);
+				if ($target.attr('id') == 'upload-button'){
+					var questions = element.find('#json-upload').val();
+					DataService.setQuestionData(questions);
+					$rootScope.$broadcast('questions_changed');
+				}
+			});
+		}
+	}
+}]);
+
+
 editApp.directive('myAccordion', ['$compile','DataService', function($compile,DataService){
 	// Runs during compile
 	return {
@@ -179,20 +200,23 @@ editApp.directive('myAccordion', ['$compile','DataService', function($compile,Da
 					// Tell the data service to set this answer for this question to "correct"
 					// and set the others to false
 					DataService.setCorrectAnswer(questionId,answerId);
+						console.log(DataService.questionData[questionId].answers);
 
 					// Change the promptText for this answer to green
 					target.parents('li').find('.promptText').addClass('correct').removeClass('incorrect');
 
 					// Change other answers' prompt text to red
 					target.parents('ul').siblings().find('.promptText.correct').addClass('incorrect').removeClass('correct');
+					DataService.postData();
 					
 				} else if (target.hasClass('questionText')) {
 					DataService.setQuestionText(questionId, target.val());
-											
+					DataService.postData();				
 
 				} else if (target.hasClass('answerText')) {
 					answerId = target.parents('li').attr('id').split("-")[1];
 					DataService.setAnswerText(questionId, answerId, target.val());
+					DataService.postData();
 				}
 				
 				
@@ -225,13 +249,25 @@ editApp.directive('myAccordion', ['$compile','DataService', function($compile,Da
 					
 				}
 			});
+			
+			// scope.$on("compile_questions", function(e){
+			// 	//element.html(getTemplate(scope.question.type));
+			// 	//$compile(element.contents())(scope);
+			// 	console.log('directive')
+			// });
+			
+			// scope.$watch('question', function(){
+			// 	console.log('question changed')
+			// 	//element.html(scope.question);
+			// 	//$compile(element.contents())(scope);
+			// })
 
 		}
 	};
 }]);
 
 // CONTROLLER
-editApp.controller('editController', ['$scope','DataService', function($scope,DataService){
+editApp.controller('editController', ['$scope','DataService', '$rootScope', function($scope, DataService, $rootScope){
 	
 	var promise = DataService.getData();
 
@@ -239,5 +275,14 @@ editApp.controller('editController', ['$scope','DataService', function($scope,Da
 		function(payload) {
 			DataService.setQuestionData($scope.questions = payload.data);
 		});
+
+	$scope.$on("questions_changed", function(e){
+		console.log('controller');
+		$scope.questions = DataService.getQuestionData();
+		//$rootScope.$broadcast('compile_questions')
+	});
+	
+	//$scope.$watch('Data');
+
 
 }])

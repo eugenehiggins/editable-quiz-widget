@@ -12,7 +12,7 @@
                 </div>
 
             </menu> -->
-            <div class="btnEdit" id="question-{{ question.id }}">
+            <div class="btnEdit panel" id="question-{{ question.id }}">
                     <textarea type="text" class="answerInput questionText" placeholder="Add Question">{{ question.text }}</textarea>
                     <textarea class="optionalText" placeholder="Add Hint (optional)" rows="1"></textarea>
                     <div class="promptText"></div>
@@ -33,7 +33,7 @@
             <ul class="answer_set sortable ui-sortable answerBlock">
 <!--                 <div class="answerBlock">
  -->                    <!-- <li class="btnEdit" id="answer-{{ a.id }}"> -->
-                    <li class="btnEdit" id="answer-{{ $index }}"  ng-repeat="a in question.answers">
+                    <li class="btnEdit panel" id="answer-{{ $index }}"  ng-repeat="a in question.answers">
                     	<span class="enumeration">{{ convertToASCII($index) }}</span>
                         <label class="switch">
                             <input type="checkbox" class="check" ng-checked="{{ a.correct }}"><span class="switch-label"></span>

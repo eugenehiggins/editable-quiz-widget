@@ -1,5 +1,4 @@
-{
-"questions": [
+[
     {
         "type": "MC",
         "text": "Pick the best description for: Tres Castillos",
@@ -101,4 +100,3 @@
         ]
     }
 ]
-}

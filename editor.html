@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Quiz Editor</title>
-    <!-- Multiple Choice Assessment Widget CSS. -->
+
     <script src="js/jquery.js"></script>
-    <!-- <script src="js/jquery-ui.js"></script> -->
+
     <script src="js/angular.js"></script>
+    <script src="js/angular-sanitize.js"></script>
+    <script src="js/ng-file-upload-shim.js"></script>
+    <script src="js/ng-file-upload.js"></script>
     <script src="js/ui-bootstrap-tpls-0.13.3.js"></script>
-    <script type="text/javascript" src="js/angular-sanitize.js"></script>
     <script src="js/edit-app.js"></script>
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/edit-quiz.css">
     <!-- <link rel="stylesheet" href="css/edit.css" /> -->
 </head>
@@ -34,6 +36,10 @@
                         Randomly shuffle choices each time the reader takes this assessment.
                     </span>
                 </div>
+                <div id="tabs-2">
+                    <json-upload></json-upload>
+                </div>
+
             </div>
         </div>
 
