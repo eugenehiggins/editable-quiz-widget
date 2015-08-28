@@ -28,16 +28,17 @@ editApp.service('DataService', ['$http', function($http){
 	}
 
 	self.addAnswer = function(qId) {
+
 		for ( var q of self.questionData) {
 
 			if (q.id == qId) {
 
 				var answers = q.answers;
 
-				answers[length + 1] = {"text":""}
+				//answers[length + 1] = {"text":""}
+				answers.push({"text":""})
 				self.questionData[qId].answers = answers;
 
-				console.log( JSON.parse(self.questionData[qId].answers) )
 			}
 		}
 	}
@@ -47,6 +48,7 @@ editApp.service('DataService', ['$http', function($http){
 	}
 
 	self.setQuestionText = function(qId, text) {
+		console.log("setting question text")
 		for  ( var q of self.questionData) {
 			if (q.id == qId) {
 				self.questionData[q.id].text = text;
@@ -58,6 +60,7 @@ editApp.service('DataService', ['$http', function($http){
 		for  ( var q of self.questionData) {
 			if (q.id == qId) {
 				var i = 0;
+				aId = parseInt(aId);
 				for (var a of q.answers){
 					if (i == aId){	
 						self.questionData[q.id].answers[i].text = text;
@@ -97,7 +100,6 @@ editApp.service('DataService', ['$http', function($http){
 					if (i == aId) {
 						
 						//delete self.questionData.id[q.id].answers.id[a.id];
-						//console.log(self.questionData[q.id].answers[i])
 						self.questionData[q.id].answers.splice(i,1);
 						return;
 						//q.answers.splice(i,1);
@@ -186,6 +188,8 @@ editApp.directive('myAccordion', ['$compile','DataService', function($compile,Da
 					
 				} else if (target.hasClass('questionText')) {
 					DataService.setQuestionText(questionId, target.val());
+											
+
 				} else if (target.hasClass('answerText')) {
 					answerId = target.parents('li').attr('id').split("-")[1];
 					DataService.setAnswerText(questionId, answerId, target.val());
@@ -202,22 +206,23 @@ editApp.directive('myAccordion', ['$compile','DataService', function($compile,Da
 				questionId = $target.parents('my-accordion').attr('questionid');
 
 				// answer trash button was click
-				if($target.hasClass('btn-trash')) {
+				if($target.hasClass('btn-trash')) {						//delete an answer
 					answerId = $target.parents('li.btnEdit').attr('id').split('-')[1];
 					$target.parents('li.btnEdit').hide('slow').remove();
+
 					DataService.deleteAnswer(questionId,answerId);
-											console.log(DataService.getAnswers(questionId))
 
 					DataService.postData();	
-				} else if ($target.hasClass('addAnswerButton')) {
+				} else if ($target.hasClass('addAnswerButton')) {   	// add an answer
 					var answers = DataService.getAnswers(questionId);
 
 					var newIndex = answers.length;
-					//console.log(questionId);
 					var newAnswerHTML = angular.element("<li class=\"btnEdit ng-scope\" id=\"answer-" + newIndex + "\" ><span class=\"enumeration ng-binding\">"+scope.convertToASCII(newIndex)+"</span><label class=\"switch\"><input type=\"checkbox\" class=\"check\" ng-checked=\"\"><span class=\"switch-label\"></span></label><textarea class=\"answerInput answerText ng-binding\" placeholder=\"Add Answer\" rows=\"1\" style=\"height: 58px;\"></textarea><div ng-class=\"a.correct ? \'correct':\'incorrect\'\" class=\"promptText  incorrect\">promptText</div><textarea class=\"optionalText ng-binding\" placeholder=\"Add Feedback (Optional)\" rows=\"1\" style=\"height: 72px;\"></textarea></li>");
-					$target.before(newAnswerHTML);
+					//$target.before(newAnswerHTML);
+					$target.before($compile(newAnswerHTML)(scope));
+					scope.$apply();
 					DataService.addAnswer(questionId);
-					//scope.$apply();
+					
 				}
 			});
 
