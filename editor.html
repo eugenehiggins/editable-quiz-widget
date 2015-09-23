@@ -43,10 +43,10 @@
             </div>
         </div>
 
-        <div class="col-md-8 questions-col">
+        <div class="col-md-8 questions-col"> <!-- this is editor.html -->
             <div class="content">
                 <accordion>
-                    <accordion-group ng-repeat="q in questions" heading=" Question {{q.id + 1}}">
+                    <accordion-group ng-repeat="q in questions" heading=" Question {{$index + 1}}">
                         <my-accordion question="q" questionid="{{q.id}}" class="xx"></my-accordion>
                     </accordion-group>
                 </accordion>

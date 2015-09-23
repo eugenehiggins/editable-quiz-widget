@@ -52,7 +52,6 @@ editApp.service('DataService', ['$http', function($http){
 	}
 
 	self.setQuestionText = function(qId, text) {
-		console.log("setting question text")
 		for  ( var q of self.questionData) {
 			if (q.id == qId) {
 				self.questionData[q.id].text = text;
@@ -138,16 +137,17 @@ editApp.service('DataService', ['$http', function($http){
 }])
 
 // DIRECTIVES
-editApp.directive('jsonUpload',['DataService','$rootScope', function(DataService,$rootScope){
+editApp.directive('jsonUpload',['DataService','$rootScope','$templateCache', function(DataService,$rootScope,$templateCache){
 	return {
 		templateUrl: 'parts/json-upload.html',
 		link: function(scope, element, attrs, controller) {
 			element.on('click', function(event){
 				$target = $(event.target);
 				if ($target.attr('id') == 'upload-button'){
+					console.log($templateCache.get('model/quiz10.json'));
 					var questions = element.find('#json-upload').val();
-					DataService.setQuestionData(questions);
-					$rootScope.$broadcast('questions_changed');
+					//DataService.setQuestionData(questions);
+					//$rootScope.$broadcast('questions_changed');
 				}
 			});
 		}
@@ -200,7 +200,6 @@ editApp.directive('myAccordion', ['$compile','DataService', function($compile,Da
 					// Tell the data service to set this answer for this question to "correct"
 					// and set the others to false
 					DataService.setCorrectAnswer(questionId,answerId);
-						console.log(DataService.questionData[questionId].answers);
 
 					// Change the promptText for this answer to green
 					target.parents('li').find('.promptText').addClass('correct').removeClass('incorrect');
@@ -274,10 +273,11 @@ editApp.controller('editController', ['$scope','DataService', '$rootScope', func
 	promise.then(
 		function(payload) {
 			DataService.setQuestionData($scope.questions = payload.data);
+					console.log($scope.questions)
+
 		});
 
 	$scope.$on("questions_changed", function(e){
-		console.log('controller');
 		$scope.questions = DataService.getQuestionData();
 		//$rootScope.$broadcast('compile_questions')
 	});

@@ -1,6 +1,6 @@
-<accordion>
+<accordion> <!-- this is accordion.html -->
 <accordion-group  ng-repeat="q in questions" question="q">
-    <h3>Question {{ q.id + 1 }}</h3>
+    <h3>Question {{ $index }}</h3>
     <div>
         <div class="group" id="questionGroup">
             <menu class="button-menu vert-right">
